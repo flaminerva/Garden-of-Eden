@@ -36,11 +36,3 @@ function evolve!(world::AbstractMatrix{Bool})
     new_world = [willsurvive(world[i,j],neib_mat[i,j]) for i in 1:m,j in 1:n]
     world .= new_world
 end
-
-using Plots
-
-anim = @animate for i in 1:300
-    heatmap(world; axis = nothing, border = :none, cbar = false, ratio = :equal)
-    evolve!(world)
-end
-gif(anim, "gameoflife.gif"; fps = 10)
