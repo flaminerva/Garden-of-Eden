@@ -1,3 +1,5 @@
+using Combinatorics
+
 function neib_id(i,j,m,n)
     c = (j-1)*m+i
     neibs = []
